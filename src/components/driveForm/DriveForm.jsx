@@ -17,11 +17,10 @@ const FormContainer = styled.div`
 
 const DriveForm = () => {
   const { register, handleSubmit } = useForm();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     sessionStorage.setItem("testDriveBookData", JSON.stringify(data));
-    navigate('/', {replace: true})
-    
+    navigate("/", { replace: true });
   };
 
   return (
@@ -46,8 +45,14 @@ const DriveForm = () => {
             placeholder="phone number"
             required
           />
-          <TextField type="submit" className="submitButton" style={{ marginBottom: 20 }} />
-          <Link to={'/'} style={{textAlign:'center'}}>Cancel</Link>
+          <TextField
+            type="submit"
+            className="submitButton"
+            style={{ marginBottom: 20 }}
+          />
+          <Link to={"/"} style={{ textAlign: "center" }}>
+            Cancel
+          </Link>
         </div>
       </form>
     </FormContainer>

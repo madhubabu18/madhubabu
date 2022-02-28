@@ -5,7 +5,7 @@ import {
   LeftContainer,
   MainContainer,
   RightContainer,
-  HtmlTable
+  HtmlTable,
 } from "./ProductDetailPage.styles";
 
 const ProductDetailPage = () => {

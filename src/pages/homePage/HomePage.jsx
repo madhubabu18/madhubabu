@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CarCard from "../../components/carCard/CarCard";
 import { CAR_LIST } from "../../MockData";
-import { MainContainer, ToggleButton, CardWrapper } from "./HomePage.styles";
+import { MainContainer, ToggleButton } from "./HomePage.styles";
 
 const HomePage = () => {
   const [toggle, setToggle] = useState(false);
@@ -10,18 +10,18 @@ const HomePage = () => {
     setToggle(!toggle);
   };
   // filter nexa cars list
-  const nexaCarList = CAR_LIST.filter(seg => seg.segment === 'Nexa')
+  const nexaCarList = CAR_LIST.filter((seg) => seg.segment === "Nexa");
   // filter nexa cars list
-  const arenaCarList = CAR_LIST.filter(seg => seg.segment === 'Arena')
-  
+  const arenaCarList = CAR_LIST.filter((seg) => seg.segment === "Arena");
+
   //conditionally render the cars list
-  const carList = () =>{
-      if(toggle) return nexaCarList
-    return arenaCarList
-  }
+  const carList = () => {
+    if (toggle) return nexaCarList;
+    return arenaCarList;
+  };
   return (
     <MainContainer>
-      <div style={{ textAlign: "end", marginBottom:20 }}>
+      <div style={{ textAlign: "end", marginBottom: 20 }}>
         <ToggleButton onClick={ToggleButtonClick} disableRipple>
           {toggle ? "ARENA" : "NEXA"}
         </ToggleButton>
@@ -29,7 +29,7 @@ const HomePage = () => {
       <div>
         {carList().map((item) => {
           return (
-            <div style={{width:'100%'}}>
+            <div style={{ width: "100%" }}>
               <CarCard carName={item.carName} img={item.img} />
             </div>
           );
